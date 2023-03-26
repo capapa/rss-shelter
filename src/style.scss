@@ -191,3 +191,67 @@ h4 {
     }
 
 }
+
+.our-frends {
+    padding: 80px 40px 100px;
+    @include flex(flex-start);
+    flex-direction: column;
+    row-gap: 60px;
+    background-color: #F6F6F6;
+
+    h3 {
+        margin: auto;
+        width: 600px;
+    }
+
+    &__container {
+        @include flex(space-around);
+        column-gap: 53px;
+
+        &__slider {
+            @include flex(space-around);
+            column-gap: 90px;
+
+            .card-pet {
+                @include flex(flex-start);
+                flex-direction: column;
+                row-gap: 30px;
+                background-color: #FAFAFA;
+                border-radius: 9px;
+
+                p {                
+                    @include title;
+                    font-size: 20px;
+                    color: #545454;
+                }
+
+                &-btn {
+                    @include btn2;
+                }
+            }
+        }
+    }
+
+    &-btn .btn {
+        @include btn;
+    }
+}
+
+.help {
+    padding: 80px 127px 100px;
+    @include flex(flex-start);
+    flex-direction: column;
+    row-gap: 80px;
+
+    &__list {
+        max-width: 1050px;
+        @include flex(space-around);
+        column-gap: 120px;
+        row-gap: 55px;
+        flex-flow: row wrap;
+
+        &-item {
+            text-align: center;
+        }
+    }
+}
