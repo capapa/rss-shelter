@@ -16,6 +16,7 @@ ul {
 
 a {
     text-decoration: none;
+    
 }
 
 body {
@@ -357,7 +358,7 @@ h4 {
                     margin-right: 20px;
                 }
 
-                h4 {
+                h4, h4 a{
                     font-size: 20px;
                     color: #F1CDB3;
                     width: 280px;
