@@ -321,6 +321,28 @@ h4 {
                 margin: 10px 5px -5px 15px  ;
             }
 
+            & span {
+                width: 310px;
+                height: 40px;
+                align-items: center;
+                font-family: $fontHead;
+                font-size: 20px;
+                line-height: 110%;
+                letter-spacing: 0.06em;
+                background: #F1CDB3;
+                border-radius: 9px;
+                border-style: none;
+                color: #545454;
+                
+                &:hover {
+                    color: #000000;
+                }
+                
+                &:active {
+                    color: #f8f8f8;
+                }
+            }
+
             input {
                 width: 310px;
                 height: 40px;
@@ -332,8 +354,9 @@ h4 {
                 background: #F1CDB3;
                 border-radius: 9px;
                 border-style: none;
+                color: #545454;
 
-                &::focus {
+                &:focus {
                     outline: none;
                 }
             }
