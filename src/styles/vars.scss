@@ -28,6 +28,15 @@ $textColorGray: #CDCDCD;
     border-radius: 100px;
     font-size: 17px;
     background-color: $btnColor;
+
+    &:hover{
+        font-size: 18px;
+        transition-duration: 0.1s;
+    }
+    &:active{
+        font-size: 16px;
+        transition-duration: 0.1s;
+    }
 }
 
 
@@ -41,4 +50,9 @@ $textColorGray: #CDCDCD;
     border-radius: 100px;
     font-size: 17px;
     border: 2px solid $btnColor;
+
+    &:hover{
+        background-color: $btnColor;
+        transition-duration: 0.3s;
+    }
 }

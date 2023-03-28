@@ -19,6 +19,7 @@ a {
     
 }
 
+
 body {
     font-family: $fontText;
     margin: auto;
@@ -74,6 +75,7 @@ h4 {
             font-weight: 300;
             color: white;
         }
+        
     }
 
     &__nav {
@@ -218,6 +220,11 @@ h4 {
                 row-gap: 30px;
                 background-color: #FAFAFA;
                 border-radius: 9px;
+                border: 1px solid transparent;
+
+                &:hover {
+                    border: 1px solid $btnColor;
+                }
 
                 p {                
                     @include title;
@@ -358,12 +365,20 @@ h4 {
                     margin-right: 20px;
                 }
 
-                h4, h4 a{
+                h4{
                     font-size: 20px;
                     color: #F1CDB3;
                     width: 280px;
                     display: inline-block;
                     text-align: left;
+                }
+
+                h4:hover {
+                    color: rgba(255, 255, 255);
+                }
+
+                h4:active {
+                    font-size: 19px;
                 }
 
             }
