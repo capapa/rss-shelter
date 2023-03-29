@@ -1,0 +1,99 @@
+@font-face {
+    font-family: "Georgia";
+    src: url(../font/georgia.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $fontText;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    
+}
+
+h3 {
+    @include title;
+    font-weight: 300;
+    font-size: 35px;
+    width: 370px;
+    text-align: center;
+    color: $textColorDark;
+}
+
+h4 {
+    @include title;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    color: $textColorDark;
+}
+
+.card-pet {
+    @include flex(flex-start);
+    flex-direction: column;
+    background-color: #FAFAFA;
+    border-radius: 9px;
+    // border: 1px solid transparent;
+
+    &:hover {
+        // border: 1px solid $colorPrimary;
+        background-color: white;
+        cursor: pointer;
+        transition-duration: 0.3s;
+
+        .card-pet-btn {
+            background-color: $colorPrimaryLight;
+            transition-duration: 0.3s;
+        }
+    }
+
+    p {                
+        margin: 20px 0 30px;
+        @include title;
+        font-size: 20px;
+        color: $textColorDark;
+    }
+
+    &-more {
+        margin-bottom: 30px;
+    }
+
+    &-btn {
+        @include btn2;
+        width: 187px;
+    }
+}
+
+.card-pet.active {
+    box-shadow: 0px 0px 5px 0px rgb(165, 165, 165);
+    border: 1px solid transparent;
+    transition-duration: .3s;
+}
+
+.control-circle {
+    @include control(transparent)
+}
+
+.control-circle-c {
+    @include control($colorPrimary)
+}
+
+.control-circle.disabled {
+    @include controlDisabled()
+}
+
+@import "./scss/main";
+@import "./scss/pets";

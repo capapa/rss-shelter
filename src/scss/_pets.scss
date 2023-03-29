@@ -1,0 +1,100 @@
+
+.header__pets {
+    &__container {
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 40px 30px;
+        width: 1280px;
+    }
+
+    &__container__logo {
+        width: 190px;
+        height: 60px;
+
+        &-title {
+            font-family: $fontHead;
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 0.06em;
+            color: $textColorDark;
+        }
+
+        &-subtitle {
+            padding: 10px 0px 0px 3px;
+            font-family: $fontText;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 15px;
+            letter-spacing: 0.1em;
+            color: $textColorDark;
+        }
+        
+    }
+
+    &__nav {
+        font-family: $fontText;
+        font-size: 15px;
+        color: $textColorDark;
+        padding-top: 20px;
+
+        &-list {
+            display: flex;
+        }
+
+        &-link a {
+            display: inline-block;
+            margin-left: 35px;
+            color: $textColorDark;
+            border-bottom: 3px solid transparent;
+
+            &:hover {
+                border-bottom: 3px solid transparent;
+                color: black;
+                transition-duration: .3s;
+            }
+
+            &:active {
+                border-bottom: 3px solid $colorPrimary;
+                transition-duration: 0.3s;
+            }
+        }
+
+        &-link.active a {
+            color: black;
+            border-bottom: 3px solid $colorPrimary;
+            cursor: default;
+        }
+    }
+}
+
+
+.our-frends-pets {
+    background-color: #F6F6F6;
+
+    &__container {
+        padding: 80px 40px 100px;
+        margin: auto;
+        width: 1280px;
+        @include flex(flex-start);
+        flex-direction: column;
+        row-gap: 60px;
+        
+        h3 {
+            margin: auto;
+            width: 600px;
+        }
+
+        &__page {
+            @include flex(space-between);
+            flex-wrap: wrap;
+            column-gap: 30px;
+            row-gap: 35px;
+        }
+
+        &__controls {
+            @include flex(center);
+            column-gap: 20px;
+        }
+    }
+}
