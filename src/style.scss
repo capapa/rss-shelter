@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Georgia";
-    src: url(../font/georgia.ttf)
+    src: url(../font/georgia.ttf);
 }
 
 * {
@@ -8,6 +8,11 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+}
+
+body {
+    font-family: $fontText;
+    margin: auto;
 }
 
 ul {
@@ -19,25 +24,13 @@ a {
     
 }
 
-
-body {
-    font-family: $fontText;
-    margin: auto;
-}
-
-.wrapper {
-    margin: auto;
-    min-height: 908px;
-    background: url(../images/start-screen-mosaic.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
-}
-
 h3 {
     @include title;
     font-weight: 300;
     font-size: 35px;
     width: 370px;
     text-align: center;
-    color: #545454;
+    color: $textColorDark;
 }
 
 h4 {
@@ -45,384 +38,62 @@ h4 {
     font-weight: 300;
     font-size: 20px;
     text-align: center;
-    color: #545454;
+    color: $textColorDark;
 }
 
-.header {
-    &__container {
-        margin: auto;
-        display: flex;
-        justify-content: space-around;
-        padding: 20px 20px 0px;
-        width: 1280px;
-    }
-
-    &__container__logo {
-        width: 184px;
-        height: 60px;
-        flex-grow: 2;
-
-        &-title {
-            font-family: $fontHead;
-            font-size: 35px;
-            color: $headColor;
-            font-weight: 300;
-        }
-
-        &-subtitle {
-            font-family: $fontText;
-            font-size: 15px;
-            font-weight: 300;
-            color: white;
-        }
-        
-    }
-
-    &__nav {
-        font-family: $fontText;
-        font-size: 15px;
-        color: $textColorGray;
-        flex-grow: 3;
-
-        &-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-
-        &-link a {
-            display: inline-block;
-            padding-bottom: 7px;
-            margin: 20px 18px;
-            color: $textColorGray;
-            border-bottom: 3px solid transparent;
-
-            &:hover {
-                border-bottom: 3px solid transparent;
-                color: white;
-            }
-
-            &:active {
-                border-bottom: 3px solid #F1CDB3;
-            }
-        }
-
-        &-link.active a {
-            color: white;
-            border-bottom: 3px solid #F1CDB3;
-        }
-    }
-}
-
-.not-only {
-    
-    display: flex;
-    justify-content: center;
-    
-    &__left {
-        margin: 253px 40px 0;
-        width: 460px;
-
-        &-heading {
-            font-weight: 300;
-            color: white;
-        }
-
-        &-heading {
-            margin-bottom: 42px;
-            width: 400px;
-            font-family: $fontHead;
-            font-size: 44px;
-            line-height: 130%;
-        }
-
-        &-subheading {
-            width: 460px;
-            font-family: $fontText;
-            font-size: 15px;
-            margin-bottom: 42px;
-            color: $textColorGray;
-            line-height: 150%;
-        }
-
-        &-btn .btn {
-            @include btn;
-        }
-    }
-
-    &__right {
-        margin: 90px 40px;
-        background-image: url(../images/start-screen-puppy.png);
-        background-repeat: no-repeat;
-        max-width: 698px;
-        min-height: 728px;
-        width: 820px;
-    }
-}
-
-.about {
-    @include flex(center);
-    margin: 80px 40px;
-    min-height: 588px;
-    width: 1200px;
-    margin: 0 auto;
-
-    &__pets {
-        background-image: url(../images/about-pets.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 408px;
-        width: 600px;
-    }
-
-    &__content {
-        width: 600px;
-        padding: 0 65px;
-
-        h3 {
-            width: 370px;
-        }
-
-        p {
-            margin-top: 25px;
-            font-size: 15px;
-            line-height: 160%;
-            color: #4C4C4C;
-        }
-    }
-
-}
-
-.our-frends {
-    padding: 80px 40px 100px;
+.card-pet {
     @include flex(flex-start);
     flex-direction: column;
-    row-gap: 60px;
-    background-color: #F6F6F6;
+    background-color: #FAFAFA;
+    border-radius: 9px;
+    // border: 1px solid transparent;
 
-    h3 {
-        margin: auto;
-        width: 600px;
-    }
+    &:hover {
+        // border: 1px solid $colorPrimary;
+        background-color: white;
+        cursor: pointer;
+        transition-duration: 0.3s;
 
-    &__container {
-        @include flex(space-around);
-        column-gap: 53px;
-
-        &__slider {
-            @include flex(space-around);
-            column-gap: 90px;
-
-            .card-pet {
-                @include flex(flex-start);
-                flex-direction: column;
-                row-gap: 30px;
-                background-color: #FAFAFA;
-                border-radius: 9px;
-                border: 1px solid transparent;
-
-                &:hover {
-                    border: 1px solid $btnColor;
-                }
-
-                p {                
-                    @include title;
-                    font-size: 20px;
-                    color: #545454;
-                }
-
-                &-more {
-                    margin-bottom: 30px;
-                }
-
-                &-btn {
-                    @include btn2;
-                }
-            }
-
-            .card-pet.active {
-                box-shadow: 0px 0px 5px 0px rgb(165, 165, 165);
-                border: 1px solid transparent;
-            }
-        }
-
-        &__arrow:hover {
-            cursor: pointer;
-        }
-
-        &__arrow.disable {
-            cursor: auto;
-            color:#4C4C4C
-        }
-        &__arrow.disable  img{
-            color:#4C4C4C
+        .card-pet-btn {
+            background-color: $colorPrimaryLight;
+            transition-duration: 0.3s;
         }
     }
 
-    &-btn .btn {
-        @include btn;
+    p {                
+        margin: 20px 0 30px;
+        @include title;
+        font-size: 20px;
+        color: $textColorDark;
+    }
+
+    &-more {
+        margin-bottom: 30px;
+    }
+
+    &-btn {
+        @include btn2;
+        width: 187px;
     }
 }
 
-.help {
-    padding: 80px 127px 100px;
-    @include flex(flex-start);
-    flex-direction: column;
-    row-gap: 80px;
-
-    &__list {
-        max-width: 1050px;
-        @include flex(space-around);
-        column-gap: 120px;
-        row-gap: 55px;
-        flex-flow: row wrap;
-
-        &-item {
-            text-align: center;
-        }
-    }
+.card-pet.active {
+    box-shadow: 0px 0px 5px 0px rgb(165, 165, 165);
+    border: 1px solid transparent;
+    transition-duration: .3s;
 }
 
-.donation {
-    padding: 80px 182px 100px;
-    @include flex(center);
-    row-gap: 30px;
-    background-color: #F6F6F6;
-    column-gap: 30px;
-
-    &__container {
-        @include flex(space-around);
-        align-items:flex-start;
-        flex-direction: column;
-        row-gap: 20px;
-        width: 380px;
-
-        &-heading {
-            width: 290px;
-            text-align: left;
-        }
-
-        &-subheading {
-            font-family: $fontHead;
-            font-size: 15px;
-            line-height: 110%;
-            letter-spacing: 0.06em;
-        }
-
-        &__card {
-            width: 380px;
-            height: 45px;
-            // padding: 10px 15px;
-            background: #F1CDB3;
-            border-radius: 9px;
-        
-            &-img {
-                margin: 10px 5px -5px 15px  ;
-            }
-
-            & span {
-                width: 310px;
-                height: 40px;
-                align-items: center;
-                font-family: $fontHead;
-                font-size: 20px;
-                line-height: 110%;
-                letter-spacing: 0.06em;
-                background: #F1CDB3;
-                border-radius: 9px;
-                border-style: none;
-                color: #545454;
-                
-                &:hover {
-                    color: #000000;
-                }
-                
-                &:active {
-                    color: #f8f8f8;
-                }
-            }
-
-            input {
-                width: 310px;
-                height: 40px;
-                align-items: center;
-                font-family: $fontHead;
-                font-size: 20px;
-                line-height: 110%;
-                letter-spacing: 0.06em;
-                background: #F1CDB3;
-                border-radius: 9px;
-                border-style: none;
-                color: #545454;
-
-                &:focus {
-                    outline: none;
-                }
-            }
-
-            input::focus {
-                outline: none;
-            }
-
-        }
-
-        &-legal {
-            font-style: italic;
-            font-weight: 300;
-            font-size: 12px;
-            line-height: 18px;
-            color: #B2B2B2;
-        }
-
-    }
+.control-circle {
+    @include control(transparent)
 }
 
-.footer {
-    background: url(../images/start-screen-mosaic.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
-
-    &__container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        margin: auto;
-        padding: 40px 40px 0;
-        max-width: 1200px;
-
-        &__column {
-
-            display: grid;
-
-            h3 {
-                text-align: left;
-                color: white;
-                width: 280px;
-                height: 90px;
-            }
-
-            div {
-                
-                img {
-                    margin-right: 20px;
-                }
-
-                h4{
-                    font-size: 20px;
-                    color: #F1CDB3;
-                    width: 280px;
-                    display: inline-block;
-                    text-align: left;
-                }
-
-                h4:hover {
-                    color: rgba(255, 255, 255);
-                }
-
-                h4:active {
-                    font-size: 19px;
-                }
-
-            }
-        }
-    }
-
+.control-circle-c {
+    @include control($colorPrimary)
 }
+
+.control-circle.disabled {
+    @include controlDisabled()
+}
+
+@import "./scss/main";
+@import "./scss/pets";

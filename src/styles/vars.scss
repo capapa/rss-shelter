@@ -1,9 +1,11 @@
 $fontHead: 'Georgia';
 $fontText: 'Arial';
-$headColor: #F1CDB3;
-$btnColor: #F1CDB3;
+$colorPrimary: #F1CDB3;
+$colorPrimaryLight: #FDDCC4;
+
 $textColorBlack: #292929;
 $textColorGray: #CDCDCD;
+$textColorDark: #545454;
 
 @mixin title {
     font-family: $fontHead;
@@ -18,6 +20,38 @@ $textColorGray: #CDCDCD;
     align-items: center;
 }
 
+@mixin control($bc) {
+    @include flex(center);
+    height: 52px;
+    width: 52px;
+    font-family: $fontHead;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 115%;
+    border-radius: 100%;
+    background-color: $bc;
+    border: 2px solid $colorPrimaryLight;
+    
+    &:hover {
+        cursor: pointer;
+        background-color: $colorPrimaryLight;
+        transition-duration: .3s;
+    }
+
+    &:active {
+        cursor: pointer;
+        transition-duration: 0.3s;
+    }
+}
+
+@mixin controlDisabled() {
+    color: $textColorGray;
+    border: 2px solid $textColorGray;
+    background-color: transparent;
+    cursor: default;
+
+}
+
 @mixin btn {
     @include title;
     display: flex;
@@ -27,15 +61,15 @@ $textColorGray: #CDCDCD;
     height: 50px;
     border-radius: 100px;
     font-size: 17px;
-    background-color: $btnColor;
+    background-color: $colorPrimary;
 
-    &:hover{
-        box-shadow: 0px 0px 5px 0px rgb(165, 165, 165);
-        transition-duration: 0.1s;
+    &:hover {
+        background-color: $colorPrimaryLight;
+        transition-duration: 0.3s;
     }
-    &:active{
+    &:active {
         color: white;
-        transition-duration: 0.1s;
+        transition-duration: 0.3s;
     }
 }
 
@@ -48,10 +82,10 @@ $textColorGray: #CDCDCD;
     height: 50px;
     border-radius: 100px;
     font-size: 17px;
-    border: 2px solid $btnColor;
+    border: 2px solid $colorPrimaryLight;
 
     &:hover{
-        background-color: $btnColor;
+        background-color: $colorPrimaryLight;
         transition-duration: 0.3s;
     }
 }
